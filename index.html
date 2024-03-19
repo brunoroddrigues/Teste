@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TREINO</title>
+    <style>
+        body{background-color: grey;}
+        h1{font-family: Arial, Helvetica, sans-serif;}
+        h1{font-style: italic;}
+        h1{font-size: 260%;}
+        label{font-family: Arial, Helvetica, sans-serif;}
+       label{font-size: 137%;}
+       label{color: white;}
+       
+       button{color: red}
+       button{font-family: sans-serif;}
+       button{font-size: 120%;}
+       button:hover{background-color: red;
+                   color: black;}
+       button{margin-right: 30px;}
+       #erro1,#erro2,#erro3,#erro4{color: red;}
+    </style>
+</head>
+<body>
+    <h1>Cadastro do lutador</h1>
+    <br>
+    <label>Nome:</label>
+    <input type="text" id="Nome">
+    <div id="erro1"></div>
+    <br><br>
+    <label>Qual Estilo de luta:</label>
+    <input type="text" id="Estilo">
+    <div id="erro2"></div>
+    <br><br>
+    <label>Data nascimento:</label>
+    <input type="text" id="dataNascimento">
+    <div id="erro3"></div>
+    <br><br>
+    <label>Telefone:</label>
+    <input type="text" id="Telefone">
+    <div id="erro4"></div>
+    <br><br>
+
+    <button onclick="Enviar()">Enviar</button>
+
+    
+    <script>
+        // criar um programa onde o lutador vai preencher os dados, se nao preencher aparecer uma mensagem em vermelho de erro
+        function Enviar()
+        {
+        let nome = document.getElementById("Nome").value;
+        let estilo = document.getElementById("Estilo").value;
+        let dataNascimento = document.getElementById("dataNascimento").value;
+        let Telefone = document.getElementById("Telefone").value;
+
+        document.getElementById("erro1").innerHTML = '';
+        document.getElementById("erro2").innerHTML = '';
+        document.getElementById("erro3").innerHTML = '';
+        document.getElementById("erro4").innerHTML = '';
+        console.log("nome:" + nome);
+        console.log("Qual Estilo de luta:" + estilo);
+        console.log("Data de nascimento:" + dataNascimento);
+        console.log("Telefone:" + Telefone);
+
+        if(nome === '')  
+        {
+            document.getElementById("erro1").innerHTML = "Preencha o nome"; // inner html permite modificar algum elemento html
+                                   // no caso o inner html esta modificando o erro1 e colocando preencha o nome
+        }
+        if(estilo === '')
+        {
+            document.getElementById("erro2").innerHTML = "Preencha o estilo de luta";
+        }
+        if(dataNascimento === '')
+        {
+            document.getElementById("erro3").innerHTML = "Preencha a data de nascimento";
+        }
+        if(Telefone === '')
+        {
+            document.getElementById("erro4").innerHTML = "Preencha o telefone";
+        }
+        }
+    </script>
+
+</body>
+</html>
